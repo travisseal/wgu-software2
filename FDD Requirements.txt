@@ -1,0 +1,33 @@
+A. 	Login to the system
+	Determine users location
+	Display errors in two languages.
+
+B.	Enter customer records
+	Display the customer records
+	Store the customer records in to the database.
+
+C.	Enter appointments
+	Display created appointment
+	Store the appointment in the database
+
+D.	View the calendar by month/week
+
+E.	Create appointments with respect to time-zone
+	Display according to time-zone
+	Store according to time-zone
+
+F.	unclear
+
+G.	Display error messages using lamdas.
+
+H.	User logs in
+	display reminders alerts
+	
+I.	Generate reports
+
+J.	When user clicks
+	Write log
+	to text file	
+	
+
+	
