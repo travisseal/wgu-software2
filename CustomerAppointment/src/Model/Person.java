@@ -27,9 +27,9 @@ public abstract class Person {
         name = new SimpleStringProperty(inName);
     }
     
-    public ObservableValue<String> getPartName()
-   {
-       return this.name;
-   }
+    public ObservableValue<String> getPersonName()
+    {
+        return this.name;
+    }
     
 }

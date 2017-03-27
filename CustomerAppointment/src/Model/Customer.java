@@ -15,6 +15,8 @@ import javafx.beans.value.ObservableValue;
 public class Customer extends Person{
     
     private StringProperty address;
+    private StringProperty phoneNumber;
+    private StringProperty address2;
     private ObservableValue<Integer> addressId;
     
     public ObservableValue<String> getAddress()
@@ -25,6 +27,14 @@ public class Customer extends Person{
     public void setAddress(String addr)
     {
         this.address = new SimpleStringProperty(addr);
+    }
+    public void setAddress2(String addr)
+    {
+        this.address2 = new SimpleStringProperty(addr);
+    }
+    public void setPhoneNumber(String addr)
+    {
+        this.phoneNumber = new SimpleStringProperty(addr);
     }
     
     public void setAddressId(int id)
@@ -39,5 +49,14 @@ public class Customer extends Person{
     public void setCreateDate(StringProperty cDate)
     {
         createDate = cDate;
+    }
+    
+    public ObservableValue getPhone()
+    {
+        return phoneNumber;
+    }
+    public ObservableValue getName()
+    {
+        return name;
     }
 }

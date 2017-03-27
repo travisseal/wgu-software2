@@ -5,15 +5,19 @@
  */
 package Model;
 
-import Controller.ConnectionBuilderDAO;
 import java.time.ZonedDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
+import static javafx.application.ConditionalFeature.FXML;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -23,33 +27,33 @@ import javafx.stage.Stage;
  */
 public class CustomerAppointment extends Application {
     
+    private static Stage stage1;
+    
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+        
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            stage1 = new Stage();
+            stage1.setScene(new Scene(root1));  
+            stage1.show();
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-                try {
-                    ConnectionBuilderDAO.getInstance();
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(CustomerAppointment.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                System.out.println(ZonedDateTime.now());
-            }
-        });
+            
+        }
+        catch(Exception e)
+        {
+            System.err.println(e.toString());
+        }
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
        
+    }
+    
+    //hide the first stage window
+    public static void hideMainStage()
+    {
+        stage1.hide();
     }
 
     /**

@@ -1,7 +1,7 @@
 /*
  * Build a connection object, and return pass it to the calling classes
  */
-package Controller;
+package Model;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -58,6 +58,8 @@ public class ConnectionBuilderDAO {
     {
         try
         {
+            if(instance == null)
+                makeConnection();
             return conn;
         }
         catch(Exception ex)
